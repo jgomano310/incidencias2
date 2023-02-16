@@ -1,0 +1,38 @@
+
+<table class="table table-hover table-striped">
+    <thead class="bg-dark text-white">
+        <tr>
+
+            <th>id_incidencia</th>
+            <th>autor</th>
+            <th>fecha</th>
+            <th>lugar_incidencia</th>
+            <th>descripción</th>
+            <th>arreglo</th>
+            <th>estado</th>
+            
+        </tr>
+    </thead>
+
+
+    <tbody>
+
+        <tr *ngFor="let incidencias of incidencias">
+
+            <td>{{incidencias.id_incidencia}}</td>
+            <td>{{incidencias.autor}}</td>
+            <td>{{incidencias.fecha}}</td>
+            <td>{{incidencias.lugar_incidencia}}</td>
+            <td>{{incidencias.descripcion}}</td>
+            <td>{{incidencias.arreglo}}</td>
+            <td>{{incidencias.estado}}</td>
+
+            <button routerLink="../actualizar/{{incidencias.documentId}}" class="btn btn-outline-secondary">editar</button>
+
+        </tr>
+
+
+    </tbody>
+
+
+</table>

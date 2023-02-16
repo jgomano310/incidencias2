@@ -1,0 +1,53 @@
+ <form [formGroup]="editForm" (ngSubmit)="onSubmit()">
+
+    <div class="mx-5">
+
+        <label class="form-label">id_incidencia</label>
+
+    </div>
+       
+    <div class="mx-5">
+
+        <label class="form-label">autor</label>
+    
+    </div>
+
+    <div class="mx-5">
+
+        <label class="form-label">fecha</label>
+    
+    </div>
+
+    <div class="mx-5">
+
+        <label class="form-label">lugar_incidencia</label>
+    
+    </div>
+
+    <div class="mx-5">
+
+        <label class="form-label">descripcion</label>
+    
+    </div>
+
+    <div class="mx-5">
+
+        <label class="form-label">arreglo</label>
+    
+    </div>
+
+    <div class="mx-5">
+
+        <label class="form-label">estado</label>
+        <input formControlName="estado" type="text" class="form-control" required="" placeholder=" leida, asignada, comenzada, terminada">
+    
+    </div>
+
+
+    <button type="submit" class="btn btn-primary"> 
+        actualizar
+    </button>
+</form> 
+
+
+

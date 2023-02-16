@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "incidencias-6088a": {
+      "hosting": {
+        "incidencias": [
+          "incidencias-6088a"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "incidencias-6088a"
+  }
+}

@@ -1,0 +1,53 @@
+<form style="text-align: center;" class="mt-4" [formGroup]="postForm" (ngSubmit)="OnSubmit()">
+
+    <div class="mx-5">
+
+        
+        <input formControlName="id_incidencia" type="text" class="form-control-lg mb-4" required="" placeholder="id_incidencia">
+    
+    </div>
+   
+
+    <div class="mx-5">
+
+        
+        <input formControlName="autor" type="text" class="form-control-lg mb-4" required="" placeholder="autor">
+    
+    </div>
+
+    <div class="mx-5">
+
+        
+        <input formControlName="fecha" type="text" class="form-control-lg mb-4" required=""  placeholder="fecha">
+     
+    </div>
+    <div class="mx-5">
+
+        <input formControlName="lugar_incidencia" type="text" class="form-control-lg mb-4" required=""  placeholder="lugar_incidencia">
+    
+    </div>
+
+    <div class="mx-5">
+
+        <input formControlName="descripcion" type="text" class="form-control-lg mb-4"  required=""  placeholder="descripcion">
+    
+    </div>
+
+    <div class="mx-5">
+
+        
+        <input formControlName="arreglo" type="text" class="form-control-lg mb-4" required=""  placeholder="arreglo">
+    
+    </div>
+
+   
+
+    
+
+    <button [disabled]="!postForm.valid" type="submit" class="btn btn-primary"> 
+        aceptar
+    </button>
+
+
+
+</form>
