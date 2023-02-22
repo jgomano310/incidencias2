@@ -4,20 +4,21 @@ import { Routes, RouterModule } from '@angular/router';
 import { RevisiónIncidenciasDirectivosModule } from '../revisión-incidencias-directivos/revisión-incidencias-directivos.module';
 import { CrearComponent } from './crear/crear.component';
 import { ListarComponent } from './listar/listar.component';
+import { canActivate, redirectUnauthorizedTo } from '@angular/fire/auth-guard';
 
 const routes: Routes = [
 
   {
-   path:'', component:ListarComponent
+   path:'', component:ListarComponent,
     
   },
   {
-    path:'crear',component:CrearComponent
+    path:'crear',component:CrearComponent, 
 
   },
 
   {
-    path:'listar',component:ListarComponent
+    path:'listar',component:ListarComponent,  
 
   },
   {

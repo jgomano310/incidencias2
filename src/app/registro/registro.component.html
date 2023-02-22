@@ -1,0 +1,39 @@
+<form style="text-align: center;" class="mt-4" [formGroup]="postForm" >
+
+    <div class="mx-5">
+
+        
+        <input formControlName="nombre" type="text" class="form-control-lg mb-4" required="" placeholder="nombre">
+    
+    </div>
+   
+
+    <div class="mx-5">
+
+        
+        <input formControlName="apellidos" type="text" class="form-control-lg mb-4" required="" placeholder="apellidos">
+    
+    </div>
+
+    <div class="mx-5">
+
+        
+        <input formControlName="email" type="text" class="form-control-lg mb-4" required=""  placeholder="correo" #email required>
+     
+    </div>
+    <div class="mx-5">
+
+        <input formControlName="password" type="text" class="form-control-lg mb-4" required=""  placeholder="contraseña" #password required>
+    
+    </div>
+
+
+    <button [disabled]="!postForm.valid" type="submit" class="btn btn-primary" (click)="Registro(email.value, password.value)"> 
+        aceptar
+    </button>
+
+    <div class="mt-3 text-center">
+        <a routerLink="/login">¿Ya tienes una cuenta?</a>
+      </div>
+
+</form>

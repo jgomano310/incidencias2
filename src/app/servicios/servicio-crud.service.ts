@@ -1,15 +1,23 @@
 import { Injectable } from '@angular/core';
+
+
 import { AngularFirestore } from '@angular/fire/compat/firestore';
-import { getDocs } from '@angular/fire/firestore';
+
 import { Incidencias } from '../interfaces/Incidencias';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { collection, getDocs, query, where } from "firebase/firestore";
+import { getAuth } from '@angular/fire/auth';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ServicioCrudService {
+  authF = getAuth();
+  
 
   private Coleccion ="incidencias";
-  constructor(private firebase:AngularFirestore) { }
+  constructor(private firebase:AngularFirestore, 
+  private auth: AngularFireAuth) { }
 
 
 
@@ -36,9 +44,9 @@ export class ServicioCrudService {
 
   }
 
-  delete(documentId:string){
+  delete(id_incidencia:string){
 
-    return this.firebase.collection(this.Coleccion).doc(documentId).delete();
+    return this.firebase.collection(this.Coleccion).doc(id_incidencia).delete();
   }
   
 
@@ -49,6 +57,34 @@ export class ServicioCrudService {
 
  
  
+
+  newUsuario(incidencias:Incidencias){
+
+    return this.firebase.collection("usuarios").add(incidencias);
+
+  }
+
+  cerrarSesion(){
+    this.auth.signOut();
+  }
+  cogerUsuario(email: any) {
+    console.log(this.firebase.collection('usuarios', ref => ref.where("email", "==", email)).snapshotChanges());
+    return this.firebase.collection('usuarios', ref => ref.where("email", "==", email)).snapshotChanges()
+  }
+
+  autentificado(){
+    return this.auth.authState;
+  }
+
+ 
+
+
+
+
+ 
+
+
+
 
     }
 

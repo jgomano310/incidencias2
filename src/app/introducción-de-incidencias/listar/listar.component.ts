@@ -28,6 +28,21 @@ export class ListarComponent implements OnInit {
       });
     }
   )
-  }
+  
 
+  
+  
+
+}
+delete(documentId: string) {
+      
+  this.servicio.delete(documentId).then(
+    () =>{
+      console.log("hola");
+    }, (error)=>{
+      console.error(error);
+    }
+
+  );
+}
 }

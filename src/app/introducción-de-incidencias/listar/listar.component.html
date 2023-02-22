@@ -28,6 +28,8 @@
             <td>{{incidencias.estado}}</td>
 
             <button routerLink="../actualizar/{{incidencias.documentId}}" class="btn btn-outline-secondary">editar</button>
+            <button (click)="delete(incidencias.documentId)" class="btn btn-outline-danger">eliminar</button>
+
 
         </tr>
 
@@ -36,3 +38,6 @@
 
 
 </table>
+
+
+

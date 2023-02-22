@@ -1,0 +1,44 @@
+
+<table class="table table-hover table-striped">
+    <thead class="bg-dark text-white">
+        <tr>
+
+            
+            <th>nombre</th>
+            <th>apellidos</th>
+            <th>contraseña</th>
+            <th>correo</th>
+            <th>rol</th>
+            
+            
+        </tr>
+    </thead>
+
+
+    <tbody>
+
+        <tr *ngFor="let usuario of usuarios">
+
+            
+            <td>{{usuario.nombre}}</td>
+            <td>{{usuario.apellidos}}</td>
+            <td>{{usuario.contrasena}}</td>
+            <td>{{usuario.correo}}</td>
+            <td>{{usuario.rol}}</td>
+            
+
+            <button routerLink="/actualizar/{{usuario.documentId}}" class="btn btn-outline-secondary">editar</button>
+            <button (click)="delete(usuario.documentId)" class="btn btn-outline-danger">eliminar</button>
+
+        </tr>
+
+
+    </tbody>
+
+
+</table>
+<div class="d-grip gap-2-mt-4 mb-5">
+    <a routerLink="/create" class="btn btn-primary" type="button">crear</a>
+
+
+</div>

@@ -1,18 +1,24 @@
-import { NgModule } from '@angular/core';
+import { NgModule, createComponent } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+
 import { environment } from '../environments/environment';
 
-import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import { IntroducciónDeIncidenciasModule } from './introducción-de-incidencias/introducción-de-incidencias.module';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { MenuComponent } from './menu/menu.component';
 import { RevisiónIncidenciasDirectivosModule } from './revisión-incidencias-directivos/revisión-incidencias-directivos.module';
+import { provideAuth,getAuth } from '@angular/fire/auth';
+import { LoginComponent } from './login/login.component';
+import { RegistroComponent } from './registro/registro.component';
+import {  ReactiveFormsModule } from '@angular/forms';
+import { CreateComponent } from './usuarios/create/create.component';
+import { ListarComponent } from './usuarios/listar/listar.component';
+import { ActualizarComponent } from './usuarios/actualizar/actualizar.component';
 
 
 
@@ -20,6 +26,12 @@ import { RevisiónIncidenciasDirectivosModule } from './revisión-incidencias-di
   declarations: [
     AppComponent,
     MenuComponent,
+    LoginComponent,
+    RegistroComponent,
+    CreateComponent,
+    ListarComponent,
+    ActualizarComponent
+    
     
     
   ],
@@ -29,9 +41,12 @@ import { RevisiónIncidenciasDirectivosModule } from './revisión-incidencias-di
     NgbModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
+    ReactiveFormsModule,
+    
     
     IntroducciónDeIncidenciasModule,
-    RevisiónIncidenciasDirectivosModule
+    RevisiónIncidenciasDirectivosModule,
+    provideAuth(() => getAuth())
    
   ],
   providers: [],

@@ -1,0 +1,58 @@
+<form [formGroup]="editForm" (ngSubmit)="onSubmit()">
+
+    <div class="mx-5">
+
+        <label class="form-label">nombre</label>
+        <input formControlName="nombre" type="text" class="form-control" required="">
+
+
+    </div>
+     
+    <div class="mx-5">
+
+        <label class="form-label">apellidos</label>
+        <input formControlName="apellidos" type="text" class="form-control" required="">
+
+    
+    </div>
+
+    <div class="mx-5">
+
+        <label class="form-label">contraseña</label>
+        <input formControlName="contraseña" type="text" class="form-control" required="">
+
+    </div>
+
+    <div class="mx-5">
+
+        <label class="form-label">contraseña</label>
+        <input formControlName="contrasena" type="text" class="form-control" required="">
+
+    
+    </div>
+
+    <div class="mx-5">
+
+        <label class="form-label">correo</label>
+        <input formControlName="correo" type="text" class="form-control" required="">
+
+    
+    </div>
+
+    <div class="mx-5">
+
+        <label class="form-label">rol</label>
+        <input formControlName="rol" type="text" class="form-control" required="">
+
+    
+    </div>
+
+   
+
+
+    <button type="submit" class="btn btn-primary"> 
+        actualizar
+    </button>
+</form> 
+
+

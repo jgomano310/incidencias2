@@ -1,0 +1,40 @@
+<form style="text-align: center;" class="mt-4" [formGroup]="postForm" (ngSubmit)="OnSubmit()">
+
+   
+
+    <div class="mx-5">
+
+        
+        <input formControlName="nombre" type="text" class="form-control-lg mb-4" required="" placeholder="nombre">
+    
+    </div>
+    
+
+    <div class="mx-5">
+
+        
+        <input formControlName="apellidos" type="text" class="form-control-lg mb-4" required="" placeholder="apellidos">
+    
+    </div>
+
+    <div class="mx-5">
+
+        
+        <input formControlName="contrasena" type="text" class="form-control-lg mb-4" required=""  placeholder="contraseña">
+     
+    </div>
+    <div class="mx-5">
+
+        <input formControlName="correo" type="text" class="form-control-lg mb-4" required=""  placeholder="correo">
+    
+    </div>
+
+    
+
+    <button [disabled]="!postForm.valid" type="submit" class="btn btn-primary"> 
+        aceptar
+    </button>
+
+
+
+</form>
